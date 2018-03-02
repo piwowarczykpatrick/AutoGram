@@ -18,9 +18,10 @@ public static void main (String [] args){
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
 	
-	Login.login();
-	userLinks = Scrape.scrapeUsers(scrapeHashtagsU, Scrape.userLinks);
-	picLinks = Scrape.scrapePhotos(scrapeHashtagsP, Scrape.picLinks);
+	Login.login(driver);
+	userLinks = Scrape.scrapeUsers(scrapeHashtagsU, Scrape.userLinks, driver);
+	picLinks = Scrape.scrapePhotos(scrapeHashtagsP, Scrape.picLinks, driver);
+	FollowUsers.followUsers(userLinks);
 	
 }
 }

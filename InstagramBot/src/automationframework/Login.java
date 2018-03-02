@@ -8,14 +8,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Login {
 
-	public static void login(){
+	public static void login(WebDriver driver){
 		String username = "cs2credittest@gmail.com";
 		String password = "Cs2creditTest!";
 		
 		//System.setProperty("webdriver.gecko.driver", "/Users/patrickpiwowarczyk/Documents/workspace/InstagramBot/geckodriver.exec");
-		//System.setProperty("webdriver.gecko.driver", "/Users/patrickpiwowarczyk/Documents/workspace/InstagramBot/geckodriver.exec");
-		WebDriver driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//System.setProperty("webdriver.gecko.driver", "/Users/patrickpiwowarczyk/Documents/workspace/InstagramBot/geckodriver.exec")
 		
 		
 		driver.get("https://www.instagram.com/");
