@@ -17,10 +17,10 @@ public static void main (String [] args){
 	WebDriver driver = new FirefoxDriver();
 	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
-	
+	System.out.println("[Instagram Bot]: Logging in");
 	Login.login(driver);
-	userLinks = Scrape.scrapeUsers(scrapeHashtagsU, Scrape.userLinks, driver);
-	picLinks = Scrape.scrapePhotos(scrapeHashtagsP, Scrape.picLinks, driver);
+	userLinks = Scrape.scrapeUsers(scrapeHashtagsU, driver);
+	//picLinks = Scrape.scrapePhotos(scrapeHashtagsP, Scrape.picLinks, driver);
 	FollowUsers.followUsers(userLinks);
 	
 }

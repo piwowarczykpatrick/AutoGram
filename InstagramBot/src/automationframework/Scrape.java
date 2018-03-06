@@ -9,21 +9,19 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Scrape extends Login {
 	
 
-	public static String [] userLinks = {};
-	public static String [] picLinks = {};
+	private static String[] userLinks;
+	String [] picLinks = {};
 	
-	public static String[] scrapeUsers(String[] scrapeHashtagsU, String[] userLinks, WebDriver driver){
+	public static String[] scrapeUsers(String[] scrapeHashtagsU, WebDriver driver){
 		for (int i = 0; i < scrapeHashtagsU.length; i++){
-			int count = 20;
+			String[] userLinks = new String[100];
 			driver.get("https://www.instagram.com/explore/tags/" + scrapeHashtagsU[i] + "/");
-			for (int p = 1; p < count; p++){
-				System.out.println(p);
 			String url = driver.findElement((By.xpath("//article/div[2]/div/div/div/a[1]"))).getAttribute("href");
 			driver.get(url);
 			System.out.println("Scrape User - Saving URL: " + driver.getCurrentUrl());
-			userLinks[p] = driver.getCurrentUrl();
+			System.out.println(i);
+			userLinks[i] = driver.getCurrentUrl();
 			}
-		}
 		return userLinks;
 	}
 	
