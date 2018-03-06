@@ -18,8 +18,9 @@ public class Scrape extends Login {
 			driver.get("https://www.instagram.com/explore/tags/" + scrapeHashtagsU[i] + "/");
 			for (int p = 1; p < count; p++){
 				System.out.println(p);
-			driver.findElement((By.xpath("//article/div[2]/div/div/div[1]/div["+p+"]"))).click();
-			System.out.println(driver.getCurrentUrl());
+			String url = driver.findElement((By.xpath("//article/div[2]/div/div/div/a[1]"))).getAttribute("href");
+			driver.get(url);
+			System.out.println("Scrape User - Saving URL: " + driver.getCurrentUrl());
 			userLinks[p] = driver.getCurrentUrl();
 			}
 		}
@@ -31,7 +32,9 @@ public class Scrape extends Login {
 			int count = 20;
 			driver.get("https://www.instagram.com/explore/tags/" + scrapeHashtagsP[i] + "/");
 			for (int p = 0; p < count; p++){
-			driver.findElement((By.xpath("//article/div[2]/div/div/div["+count+"]"))).click();
+			String url = driver.findElement((By.xpath("//article/div[2]/div/div/div/a[1]"))).getAttribute("href");
+			driver.get(url);
+			System.out.println("Scrape Photos - Saving URL: " + driver.getCurrentUrl());
 			picLinks[p] = driver.getCurrentUrl();
 			}
 		}
