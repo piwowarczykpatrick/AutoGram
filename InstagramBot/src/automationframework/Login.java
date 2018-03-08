@@ -16,11 +16,17 @@ public class Login {
 		//System.setProperty("webdriver.gecko.driver", "/Users/patrickpiwowarczyk/Documents/workspace/InstagramBot/geckodriver.exec")
 		
 		
-		driver.get("https://www.instagram.com/");
-		driver.get("https://www.instagram.com/accounts/login/");
 		driver.findElement((By.xpath("//input[@name='username']"))).sendKeys(username);
 		driver.findElement((By.xpath("//input[@name='password']"))).sendKeys(password);
 		driver.findElement((By.xpath("//button[text()='Log in']"))).click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 	}
 				
 		

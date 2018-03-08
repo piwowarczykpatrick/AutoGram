@@ -26,8 +26,6 @@ public class Setup {
 
 	import org.testng.Assert;
 
-	public class Webpage_Methods_Master
-	{
 	    // Setting up WebDriver
 
 	    public static WebDriver driver;
@@ -81,7 +79,7 @@ public class Setup {
 
 	    // Wait for elements to load or to be displayed
 
-	    public void waitFor(int numSeconds)
+	    public static void waitFor(int numSeconds)
 	    {
 	        try{
 	            Thread.sleep(numSeconds*1000);
@@ -93,7 +91,7 @@ public class Setup {
 	        }
 	    }
 
-	    public void waitForPageToLoad(int waitTime)
+	    public static void waitForPageToLoad(int waitTime)
 	    {
 	        driver.manage().timeouts().pageLoadTimeout(waitTime, TimeUnit.SECONDS);
 	    }
@@ -368,4 +366,4 @@ public class Setup {
 	        return null;
 	    }
 	}
-}
+
