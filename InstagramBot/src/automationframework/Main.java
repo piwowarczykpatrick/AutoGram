@@ -35,7 +35,7 @@ public static void main (String [] args){
 	System.out.println("Pic Links: " +picLinks.length);
 	System.out.println(userLinks);
 	usersFollowed = FollowUsers.followUsers(userLinks, driver);
-	//LikePosts.LikePosts(picLinks, picsLiked, driver);
+	LikePosts.LikePosts(picLinks, picsLiked, driver);
 	UnfollowUsers.unfollow(usersFollowed, driver);
 	//some sort of reports (users followed, photos liked, users unfollowed, runtime etc.)
 	driver.quit();
